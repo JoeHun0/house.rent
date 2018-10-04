@@ -9,6 +9,16 @@ package houserent;
  *
  * @author Diak
  */
-public class RentedResidence {
+public class RentedResidence implements Residence {
+
+    @Override
+    public void pay(int cost) {
+
+    }
+
+    @Override
+    public double getValue() {
+        return 0;
+    }
 
 }

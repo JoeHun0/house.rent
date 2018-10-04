@@ -2,13 +2,17 @@ package houserent;
 
 public abstract class Person {
 
-    private SavingAccount savings;
+    protected SavingAccount savings;
+    protected Residence residence;
     protected double cash;
 
-    public Person(SavingAccount savings, double cash) {
+    public Person(SavingAccount savings, Residence residence, double cash) {
         this.savings = savings;
+        this.residence = residence;
         this.cash = cash;
     }
+
+
 
     public abstract void spend(double residenceCost);
 
@@ -17,7 +21,7 @@ public abstract class Person {
     }
 
     public double getEquity() {
-        return cash;
+        return cash+residence.getValue()+savings.getBalance();
     }
 
 }

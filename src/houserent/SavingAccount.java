@@ -11,20 +11,23 @@ package houserent;
  */
 public class SavingAccount {
 
-    private int balance;
+    private double balance;
+    private double interestRate;
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
-    private double interestRate;
 
     public SavingAccount(double interestRate) {
         this.interestRate = interestRate;
 
     }
 
-    public void deposit(int amount) {
+    public void deposit(double amount) {
         balance += amount;
+    }
+    public void PayInterests(){
+        balance = balance+(balance*interestRate);
     }
 
 }
